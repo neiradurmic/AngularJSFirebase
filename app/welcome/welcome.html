@@ -1,19 +1,21 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>WebApp Home Page</title>
+	<title>Customer Care</title>
 </head>
 <body ng-controller="WelcomeCtrl">
 
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a href="#" class="navbar-brand">WebApp</a>
+		<a class="navbar-brand" href="#">Custom Construction Services</a>
 		</div>
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="#/welcome">Home</a></li>
-			<li><a href="#/addPost">Add Post</a></li>
+		<ul class="nav navbar-nav d-flex flex-md-row flex-column justify-content-between">
+			<li class="active"><a href="#/welcome">Customer Care</a></li>
+			<li><a href="#/addPost">Add Note</a></li>
 			<li ng-click="logout()"><a href="#">Logout</a></li>
+
 		</ul>
 	</div>
 </nav>
@@ -21,18 +23,76 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<h3>Welcome Home {{username}} !</h3>
+			<h3 class="uvodna">We are at your service <span class="akcenat">{{username}}!</span></h3>
 		</div>
 	</div>
 </div>
+
+<header class="masthead">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center">
+      <div class="col-12 text-center">
+        <h1 class="titl">Custom Construction Services</h1>
+        <p class="lead">Skill. Responsibility. Care.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div id="services" >
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                  <div class="message-box"><br><br>
+                     <h2>Our Services</h2><br>
+                     <h5>We pride ourselves in the relationships we build and the quality of completed projects we deliver to our customers. At <span class="akcenat">Custom Construction Services </span>we build homes and commercial buildings that are customised to our clients unique requirements. We deliver on your vision.</h5>
+                  </div>
+                  <!-- end messagebox -->
+               </div>
+               <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12"><br>
+                  <div class="row">
+                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="service-inform">
+                           <div class="icon-service">
+                              <img src="https://static.thenounproject.com/png/795297-200.png" style="height:70px;width:70px;" alt="#" />
+                           </div>
+                           <div class="service-inform-text">
+                              <h3>Design</h3>
+                              <p>Our customers are included from the very beginning: planning, sketching, developing. This way we can make your ideas become real and there's nothing we enjoy more.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="service-inform">
+                           <div class="icon-service">
+                              <img src="http://minibagerdetva.sk/img/minibager_icon.png" style="height:70px;width:70px;" alt="#" />
+                           </div>
+                           <div class="service-inform-text">
+                              <h3>Construction</h3>
+                              <p>We keep you informed during all the stages the Project goes through. More importantly, we accept your suggestions and wishes. Your opinion matters most.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+<!-- Page Content -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="font-weight-light"><span class="akcenat">Latest Updates on Your Project</span></h2>
+    <p>Here You can find all the latest info on Your Project. We will regularly post to keep You updated. You are more than welcome to <a href="#/addPost" class="text-warning">Add Note</a> and share Your thoughts with us. We will get back to You as soon as possible.</p>
+  </div>
+</section>
 
 <div class="container">
 	<div class="row" ng-repeat="article in articles">
 		<div class="col-md-12 well well-sm">
 			<h4>{{article.title}}</h4>
 			<p>{{article.post}}</p>
-			<button type="submit" class="btn btn-sm btn-primary" ng-click="editPost(article.$id)" data-target="#editModal" data-toggle="modal">Edit</button>
-			<button type="submit" class="btn btn-sm btn-danger" ng-click="deleteCnf(article)" data-target="#deleteModal" data-toggle="modal">Delete</button>
+			<button type="submit" class="btn btn-sm btn-dark" ng-click="editPost(article.$id)" data-target="#editModal" data-toggle="modal">Edit</button>
+			<button type="submit" class="btn btn-sm btn-warning" ng-click="deleteCnf(article)" data-target="#deleteModal" data-toggle="modal">Delete</button>
 		</div>
 	</div>
 </div>
@@ -82,5 +142,88 @@
 	</div>
 </div>
 
+<div class="top-content prelaz">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                	
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2 text">
+                            <h1 class="wow fadeInLeftBig"></h1>
+                            <div class="description wow fadeInUp">
+                            	
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+<div class="section-4-container section-container section-container-image-bg">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col section-4 section-description wow fadeInLeftBig">
+	                	<br><h2><span class="akcenat">Document & Photo Gallery</span></h2>
+	                    <p>
+	                    	Important contracts, documents and agreements are listed below together with photo gallery.
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+        </div>
+
+
+<div class="container">
+   <div ng-controller="UploadCtrl">
+    <form name="uploadForm" ng-submit="upload()">
+      <h3><span class="akcenat">File Uploader</span></h3>
+      <div class="input-group">
+        <input onchange="angular.element(this).scope().onChange(this.files)" class="form-control" type="file" />
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">Upload</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div ng-controller="tableCtrl">
+    <h3>Uploaded Files</h3>
+    <table datatable="ng" class="table row-border table-striped table-hover compact display">
+    <thead>
+      <tr>
+        <th>Upload Date</th>
+        <th>Name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(key,value) in files">
+        <td>{{value.timestamp | date}}</td>
+        <td>{{value.name}}</td>
+        <td>
+          <a href="{{value.url}}" class="btn btn-default" target="_blank">Download</a>
+          <a href="#" class="btn btn-default" ng-click="delete(key, value.name)">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+
+    <footer class="footer-container">
+        
+	        <div class="container">
+	        	<div class="row">
+	        		
+                    <div class="col">© Custom Construction Services</a>
+                    </div>
+                    
+                </div>
+	        </div>
+                	
+        </footer>
+  
 </body>
 </html>

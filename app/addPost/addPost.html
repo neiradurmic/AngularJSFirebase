@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Add Post Page</title>
+	<title>Add Note</title>
 </head>
 <body ng-controller="AddPostCtrl">
 
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
-			<a href="#" class="navbar-brand">WebApp</a>
+			<a href="#" class="navbar-brand">Custom Construction Services</a>
 		</div>
-		<ul class="nav navbar-nav">
-			<li><a href="#/welcome">Home</a></li>
-			<li class="active"><a href="#/addPost">Add Post</a></li>
+		<ul class="nav navbar-nav  d-flex flex-md-row flex-column justify-content-between">
+			<li><a href="#/welcome">Customer Care</a></li>
+			<li class="active"><a href="#/addPost">Add Note</a></li>
 			<li><a href="#">Logout</a></li>
 		</ul>
 	</div>
@@ -28,7 +28,7 @@
 
 <div class="container">
 	<form role="form" name="postForm" ng-submit="createPost()" novalidate="">
-		<legend>Create Post</legend>
+		<legend>Create Note</legend>
 		<div class="row">
 			<div class="col-md-5">
 				<div class="form-group" ng-class="{'has-error': postForm.titleTxt.$invalid && postForm.titleTxt.$touched}">
@@ -42,7 +42,7 @@
 					<small class="help-block" ng-show="postForm.postTxt.$error.minlength && postForm.postTxt.$touched">Please enter a valid post.</small>
 				</div>
 				<div class="form-group">
-					<button type="submit" class="btn btn-primary" ng-disabled="postForm.$invalid">Add Post</button>
+					<button type="submit" class="btn btn-warning" ng-disabled="postForm.$invalid">Add Post</button>
 				</div>
 			</div>
 		</div>

@@ -4,9 +4,10 @@
 	<title>Registration Page</title>
 </head>
 <body ng-controller="RegisterCtrl">
+<div class="bg-light izgled">Custom Construction Services © 2019</div>
 <div class="container">
-	<div class="jumbotron col-md-6 col-md-offset-3" style="padding-top: 0; padding-bottom: 0;">
-		<h2>WebApp Registration Page</h2>
+	<div class="jumbotron col-md-6 col-md-offset-3 bg-light" style="margin-top: 50px; padding-bottom: 0;">
+		<h2 class="izgled">Register To Track Your Project</h2>
 	</div>
 	<form role="form" name="regForm" novalidate="">
 		<div class="form-group col-md-6 col-md-offset-3" ng-class="{'has-error': regForm.email.$invalid && regForm.email.$touched}">
@@ -24,7 +25,7 @@
 		</div>
 		<div class="col-md-6 col-md-offset-3">
 			<p ng-show="errMsg" style="color: red;">{{errorMessage}}</p>
-			<button type="submit" class="btn btn-lg btn-primary btn-block" ng-disabled="regForm.$invalid" ng-click="signUp()">Sign Up</button>
+			<button type="submit" class="btn btn-lg btn-warning btn-block" ng-disabled="regForm.$invalid" ng-click="signUp()">Sign Up</button>
 		</div>
 	</form>
 </div>

@@ -1,21 +1,3 @@
-'use strict';
-
-// Declare app level module which depends on views, and components
-angular.module('webApp', [
-  'ngRoute',
-  'webApp.home',
-  'webApp.register',
-  'webApp.welcome',
-  'webApp.addPost',
-  'firebase',
-  'datatables'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-
-  $routeProvider.otherwise({redirectTo: '/home'});
-}]);
-
-
 function UploadCtrl($scope, $firebaseStorage, $firebaseObject) {
 
     let fileToUpload = null;
@@ -46,7 +28,7 @@ function UploadCtrl($scope, $firebaseStorage, $firebaseObject) {
 angular
     .module('webApp')
     .controller('UploadCtrl', UploadCtrl)
-
+    .controller('tableCtrl', tableCtrl)
     function tableCtrl($scope, $firebaseStorage, $firebaseObject){
     let fileRef = firebase.database().ref('Files');
     $scope.files = $firebaseObject(fileRef);
@@ -59,22 +41,3 @@ angular
         })
     }
 }
-
-function tableCtrl($scope, $firebaseStorage, $firebaseObject){
-    let fileRef = firebase.database().ref('Files');
-    $scope.files = $firebaseObject(fileRef);
-    $scope.delete = (key, name) => {
-        let storageRef = firebase.storage().ref(name);
-        let storage = $firebaseStorage(storageRef);
-        storage.$delete().then(() => {
-            delete $scope.files[key];
-            $scope.files.$save();
-        })
-    }
-}
-
-
-angular
-    .module('webApp')
-    .controller('UploadCtrl', UploadCtrl)
-    .controller('tableCtrl', tableCtrl)
