@@ -1,12 +1,10 @@
-# Simple WebApp using AngularJS and Firebase
-A simple web application using angularjs and firebase.
-It's a simple web application where a user can simply signup and signin and create post and can edit/delete their post.
+# Customer Care App 
 
-Configure the app by adding the project's config object:-
-var config = {
-    apiKey: "apiKey",
-    authDomain: "projectId.firebaseapp.com",
-    databaseURL: "https://databaseName.firebaseio.com",
-    storageBucket: "bucket.appspot.com"
-  };
-firebase.initializeApp(config);
+Built using AngularJS and Firebase
+
+About the app
+Customer Care App is a tool for company to keep users informed about ongoing projects. Users can Sign-up and Sign-in and then 'track' projects. The company is supposed to update the customer on all the latest news related to the project. The customer can also make suggestions by adding notes. Also, there is a document & photo gallery which contains all important contracts, images etc.
+
+
+To Run
+npm start"# customerCare" 
