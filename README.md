@@ -7,7 +7,7 @@ Customer Care App is a tool for company to keep users informed about ongoing pro
 
 
 # To Run
-npm install
-bower install bootstrap
-bower install jquery
+npm install <br>
+bower install bootstrap <br>
+bower install jquery <br>
 npm start
